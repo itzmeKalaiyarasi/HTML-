@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Local Storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body onload="counterFunction()">
+    <h1>Local Storage</h1>
+   Name:
+   <input id="name" type="text" oninput="enableButton()">
+   <button id="saveButton"onclick="saveName()" >Save</button>
+   <script>
+       document.getElementById("saveButton").disabled=true
+       var counter = 0
+
+    function saveName()
+    {
+       
+        var fullName = document.getElementById("name").value
+        console.log(fullName)
+        console.log("Local Storage")
+        if(typeof(Storage)!="undefined")
+        {
+            if(fullName !="")
+            {
+         
+          localStorage.setItem("name_"+counter,fullName)
+          counter++
+          localStorage.setItem("counterValue",counter)
+          document.getElementById("name").value =""
+          document.getElementById("name").focus
+          document.getElementById("saveButton").disabled=true
+          
+            }
+          
+        }
+    }
+    function enableButton()
+    {
+        console.log("Enabling")
+        document.getElementById("saveButton").disabled=false
+    }
+    function counterFunction()
+    {
+    console.log("Counter Function") 
+    if(typeof(Storage)!="undefined")
+    {
+        if(localStorage.getItem("counter") == "null")
+        {
+            counter =0 
+        }
+        else{
+            console.log(counterValue)
+            var currentCounter = localStorage.getItem("counterValue")
+            counter = parseInt(currentCounter)
+        }
+        
+    }
+    
+    }
+   </script>
+</body>
+</html>

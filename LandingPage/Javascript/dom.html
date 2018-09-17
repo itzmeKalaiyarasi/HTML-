@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      .para1{
+          color: red;
+      }
+    </style>
+</head>
+<body>
+    <h1 id="head1">DOM navigation</h1>
+    <div>
+ <h2>DOM heading</h2>
+ <p class="para1">Document</p>
+ <p>Training on React</p>
+  
+
+    </div>
+    <script>
+     var idRef = document.getElementById("head1")
+     idRef.innerHTML = "Js DOM navigation"
+     var  tagRef = document.getElementsByTagName("p")
+    for(i=o;i<tagRef.length;i++)
+    {
+        tagRef[i].innerHTML=i+"New Para"
+    }
+    var classRef = document.getElementsByClassName("para1")
+    classRef[0].innerHTML = "coming from the class"
+   
+    </script>
+</body>
+</html>

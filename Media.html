@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Multimedia</h1>
+    <video id="myVideo"width="500" height="300" controls >
+      <source src="greypass009.mp4" type="video/mp4">
+      <source src="greypass009.ogv" type="video/ogv">
+    </video>
+
+    <button id="playButton" onclick="playVideo()">Play</button> 
+    <button id="pauseButton" onclick="pauseVideo()">Pause</button>
+
+    <script>
+        var videoRef =document.getElementById("myVideo")
+     function playVideo(){
+         console.log("Video Play")
+         if(videoRef.pause)
+         {
+            videoRef.play()
+            document.getElementById("playButton").disabled=true
+            document.getElementById("pauseButton").disabled=false
+         }
+         
+     }
+     function pauseVideo(){
+         console.log("Video Play")     
+         videoRef.pause()
+         document.getElementById("playButton").disabled=false
+         document.getElementById("pauseButton").disabled=true
+     }
+     
+
+    
+    </script>
+</body>
+</html>

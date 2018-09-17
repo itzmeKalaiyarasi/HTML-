@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODO in Javascript</title>
+</head>
+<body onLoad= "domLoad()">
+    <h3>Javascript ToDo</h3>
+    <label for="todo">Todo Item:</label>
+    <input type="text">
+    <button onclick="addTodo()">Add Todo</button>
+    <div id="todoList"></div>
+    <script>
+        //Create element outside DOM.It should be created only once
+        var counterValue=0;
+         var newUl = document.createElement("ul")
+         var todoListRef =document.getElementById("todoList")
+         todoListRef.innerHTML="Todo list will come here"
+     function addTodo()
+     {
+         //Save Todo to localstorage
+       
+         console.log("Todo Clicked")
+         var valueInput = document.getElementsByTagName("input")[0].value
+         saveTodo(valueInput)
+         //Create element outside DOM.It is created for every task which is added
+         var newLi = document.createElement("li")
+         newLi.innerHTML = valueInput
+         //append new li to new ul
+         newUl.appendChild(newLi)
+         //Insert new Element in DOM
+         todoListRef.appendChild(newUl)
+         console.log(todoListRef)
+      
+         document.getElementsByTagName("input")[0].value=""
+       
+     }
+    
+     function saveTodo(valueInput)
+     {
+         localStorage.setItem("Todo_"+counterValue ,valueInput)
+         counterValue++
+         localStorage.setItem("task" ,counterValue)
+     }
+     function domLoad()
+     {
+        if(typeof(Storage)!="undefined")
+        {
+            if(localStorage.getItem("task") !=="null")
+            {
+                counterValue=0
+             
+          
+            }
+            else{
+                var currentTaskCounter =localStorage.getItem("task")
+                counterValue=parseInt()
+            }
+          
+        }
+     }
+    </script>
+</body>
+</html>

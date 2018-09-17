@@ -1,0 +1,17 @@
+html, body {
+    background:url("nature.jfif") center center no-repeat;
+    height: 100%;
+    background-size:cover;
+}
+#logo{
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%,0);
+   padding-top: 20px;
+}
+#intro p {
+    color: blue;
+    text-align:center;
+    font-family: 'Just Another Hand', cursive;
+    font-size:1.8em;
+}

@@ -1,0 +1,24 @@
+.externalStyle
+{
+    color: darkcyan;
+    background-color: black;
+    text-align: center;
+   /* border:2px dotted cyan*/
+   /* border-top: 2px solid red;*/
+   border-top-color: red;
+   border-top-width: 2px;
+   border-top-style: dotted;
+   border-bottom: 2px solid blue;
+}
+div{
+    border: 1px solid red;
+    border-radius: 8px;
+}
+.layout
+{
+    border-color:black;
+    width: 200px;
+    height: 200px;
+    float: right;
+    position: fixed;
+}
